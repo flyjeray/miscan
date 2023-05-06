@@ -20,7 +20,7 @@ function App() {
       .catch((error) => console.error(error));
   };
 
-  const getRichestBalances = (amount: number) => {
+  const getRichestBalances = (amount?: number) => {
     if (!resultAddress) return;
 
     const balances = resultAddress.data.balances;
@@ -40,7 +40,7 @@ function App() {
     <div className="App">
       <input value={inputAddress} onChange={handleChange} />
       <button onClick={handleClick}>Get</button>
-      {resultAddress && getRichestBalances(5)}
+      {resultAddress && getRichestBalances()}
     </div>
   );
 }
